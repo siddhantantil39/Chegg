@@ -1,0 +1,58 @@
+1. FIFO Queue using doubly linked list.
+
+PseudoCode:
+
+STRUCTURE Node:
+    INT val;
+    STRUCTURE Node next,prev.
+
+ENQUEUE(newNode):
+    if ptrf==NULL :
+         ptrf = newNode;
+         ptrr = newNode;
+         newNode.next = newNode.prev = NULL;
+// if there are one or multimple nodes in the list.
+    else :
+         ptrr->next =newNode;
+         newNode->prev = ptrr;
+         newNode->next = NULL;
+         ptrr = newNode;
+
+DEQUEUE():
+    if ptrf==NULL:
+        print "There is nothing in the queue".
+    if ptrf->next==NULL:    // only one node.
+        temp=ptrf;
+        ptrf=NULL;
+        ptrr=NULL;
+        free(temp).
+    else :
+        temp = ptrf;
+        (temp->next)->prev = NULL;
+        ptrf = temp->next;
+        free(temp).
+
+Pseudo-code for FIFO queue implementation by PriorityQueue:
+
+#DEFINE INF 1e9
+
+struct Node:
+    INT prt;
+    INT val.
+
+INT prty = INF;
+
+PriorityQueue<Node> pq; 
+// sorted in-terms of decreasing priority... 
+
+ENQUEUE(INT v):
+    newNode = Node();
+    newNode.val = v;
+    newNode.prt = prty;
+    prty = prty - 1 ;
+    pq.insert(newNode);
+
+DEQUEUE():
+    newNode = pq.extract();
+    print newNode.val;
+    pq.pop().
