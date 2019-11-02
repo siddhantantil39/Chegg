@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #define nl printf("\n")
-struct Name{
+struct Name{  
     char nm[50];
     int wins,loses,ties;
 }p[2];
